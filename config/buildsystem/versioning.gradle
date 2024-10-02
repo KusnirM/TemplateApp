@@ -1,0 +1,3 @@
+def libsVersions = [:]
+//libsVersions.kmp = "1"
+ext.libsVersions = libsVersions

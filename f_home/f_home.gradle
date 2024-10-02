@@ -1,0 +1,5 @@
+include(":f_home")
+//include(":f_home", ":home_data", ":home_domain")
+
+//project(":home_data").projectDir = new File(rootDir, "f_home/home_data")
+//project(":home_domain").projectDir = new File(rootDir, "f_home/home_domain")

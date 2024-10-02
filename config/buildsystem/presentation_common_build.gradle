@@ -1,0 +1,105 @@
+/**
+ * This is the build.gradle with the common configurations for ALL presentation modules PLUS l_common_presenter
+ * PLUS core.
+ * Configurations that are specific to presentation modules but NOT to l_common_presenter OR core should be added to
+ * presentation_build.gradle file.
+ */
+
+//import buildsrc.plugins.AndroidLibraryPlugin
+//import buildsrc.plugins.JacocoAndroidLibraryPlugin
+
+apply plugin: 'kotlin-android'
+apply plugin: 'com.google.devtools.ksp'
+//apply plugin: AndroidLibraryPlugin
+//apply plugin: JacocoAndroidLibraryPlugin
+//apply plugin: 'io.gitlab.arturbosch.detekt'
+apply from: "${rootProject.projectDir}/config/buildsystem/versioning.gradle"
+//apply plugin: 'app.cash.paparazzi'
+
+android {
+    compileSdk libs.versions.compileSdk.get() as int
+
+    defaultConfig {
+        minSdk libs.versions.minSdk.get() as int
+        targetSdk libs.versions.targetSdk.get() as int
+        versionName '1'
+        versionCode 1
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    buildFeatures {
+        buildConfig true
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+//
+//    buildTypes {
+//
+//        release {}
+//
+//        alpha {}
+//
+//        debug {}
+//    }
+}
+
+dependencies {
+    implementation libs.kotlin.ksp.api
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
+    implementation(libs.navigation.fragment.dynamicfeatures)
+    implementation(libs.lifecycle.extensions)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.annotation)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.dagger)
+    implementation(libs.dagger.android)
+    implementation(libs.dagger.android.support)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.timber)
+    implementation(libs.logging.interceptor)
+    implementation(libs.jodatime)
+    implementation(libs.glide)
+    implementation(libs.glide.okhttp3)
+
+    ksp(libs.dagger.compiler)
+    ksp(libs.dagger.android.processor)
+    ksp(libs.lifecycle.compiler)
+
+    testImplementation(libs.junit.jupiter.api)
+    testImplementation(libs.junit.jupiter.params)
+    testRuntimeOnly(libs.junit.vintage.engine)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.mockk)
+    testImplementation(libs.core.testing)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.org.json)
+
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.ui)
+    implementation(libs.compose.material3)
+    implementation(libs.compose.foundation)
+    debugImplementation(libs.compose.ui.tooling)
+    implementation(libs.compose.runtime.livedata)
+    implementation(libs.compose.ui.tooling.preview)
+    implementation(libs.compose.activity)
+    implementation(libs.kotlinx.coroutines.play.services)
+}

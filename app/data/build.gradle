@@ -1,0 +1,15 @@
+apply from: "$rootProject.projectDir/config/buildsystem/data_build.gradle"
+
+/**
+ * Only configurations that are specific to this module should be added to this file.
+ */
+
+android {
+    namespace "mk.tempalateApp.data"
+}
+dependencies {
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    testImplementation(project(":data"))
+    testImplementation(project(":domain"))
+}

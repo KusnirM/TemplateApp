@@ -1,0 +1,26 @@
+apply plugin: 'kotlin'
+apply from: "${rootProject.projectDir}/config/buildsystem/versioning.gradle"
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+}
+
+compileJava {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+dependencies {
+    implementation project(":l_common_domain")
+    implementation(libs.gson)
+    implementation(libs.mockk)
+    testImplementation(libs.mockk)
+    implementation(libs.core.testing)
+    testImplementation(libs.core.testing)
+    implementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.kotlinx.coroutines.test)
+    implementation(libs.junit.jupiter.api)
+    testImplementation(libs.junit.jupiter.api)
+}
