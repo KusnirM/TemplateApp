@@ -1,17 +1,16 @@
 package mk.templateApp
 
-import android.content.ComponentCallbacks2
 import android.content.Context
 import dagger.android.AndroidInjector
-import mk.templateApp.commonDomain.dynamicDelivery.FeatureType
-import mk.templateApp.commonPresenter.dynamicDelivery.FeatureCache
-import mk.templateApp.commonPresenter.dynamicDelivery.FeatureCacheProvider
+import mk.templateApp.commonDomain.dynamicFeature.FeatureType
 import mk.templateApp.di.ApplicationComponent
 import mk.templateApp.di.DaggerApplicationComponent
 import mk.templateApp.di.DaggerSplitApplication
-import mk.templateApp.di.dynamic.BaseModuleInjector
+import mk.templateApp.di.BaseModuleInjector
 import mk.templateApp.di.modules.ApplicationModule
-import mk.templateApp.dynamicDelivery.FeatureLoaderImpl
+import mk.templateApp.dynamicFeature.FeatureLoaderImpl
+import mk.templateApp.presenter.dynamicDelivery.FeatureCache
+import mk.templateApp.presenter.dynamicDelivery.FeatureCacheProvider
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 import javax.inject.Inject
@@ -37,23 +36,11 @@ class AndroidApp : DaggerSplitApplication(), FeatureCacheProvider {
             _applicationComponent = comp
         }
 
-//    lateinit var activityLifecycle: AppActivityLifeCycleCallbacks
-//
-//    private lateinit var applicationLifeCycle: VhiApplicationLifecycle
-//
-//    val lifecycle: ApplicationLifeCycle
-//        get() = applicationLifeCycle
-
     override fun applicationInjector(): AndroidInjector<AndroidApp> = applicationComponent
 
     override fun onCreate() {
-//        activityLifecycle = AppActivityLifeCycleCallbacks()
-//        applicationLifeCycle = VhiApplicationLifecycle(activityLifecycle)
         super.onCreate()
-//            registerActivityLifecycleCallbacks(activityLifecycle)
-
-            initializeLogging()
-
+        initializeLogging()
     }
 
     private fun initializeLogging() {
@@ -74,23 +61,16 @@ class AndroidApp : DaggerSplitApplication(), FeatureCacheProvider {
                 moduleInjectors[featureType] = injector
                 injector
             } catch (e: ClassNotFoundException) {
-                Timber.e(e)
+                println(e)
                 null
             } catch (e: IllegalAccessException) {
-                Timber.e(e)
+                println(e)
                 null
             } catch (e: InstantiationException) {
-                Timber.e(e)
+                println(e)
                 null
             }
         }
-
-    override fun onTrimMemory(level: Int) {
-        if (level == ComponentCallbacks2.TRIM_MEMORY_UI_HIDDEN) {
-//            applicationLifeCycle.backgrounded()
-        }
-        super.onTrimMemory(level)
-    }
 
     companion object {
         operator fun get(context: Context): AndroidApp = context.applicationContext as AndroidApp
@@ -98,3 +78,4 @@ class AndroidApp : DaggerSplitApplication(), FeatureCacheProvider {
 
     override fun provideFeatureCache(): FeatureCache = featureLoader
 }
+

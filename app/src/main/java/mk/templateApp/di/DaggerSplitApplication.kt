@@ -6,8 +6,7 @@ import com.google.android.play.core.splitcompat.SplitCompatApplication
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
-import mk.templateApp.commonDomain.dynamicDelivery.FeatureType
-import mk.templateApp.di.dynamic.BaseModuleInjector
+import mk.templateApp.commonDomain.dynamicFeature.FeatureType
 import javax.inject.Inject
 
 abstract class DaggerSplitApplication : SplitCompatApplication(), HasAndroidInjector {
@@ -34,23 +33,17 @@ abstract class DaggerSplitApplication : SplitCompatApplication(), HasAndroidInje
             return@AndroidInjector
         }
         when (it) {
-            is Fragment -> {
-                moduleFragmentInjectors.forEach { injector ->
-                    if (injector.maybeInject(it)) {
-                        return@AndroidInjector
-                    }
+            is Fragment -> moduleFragmentInjectors.forEach { injector ->
+                if (injector.maybeInject(it)) {
+                    return@AndroidInjector
                 }
             }
-            is Activity -> {
-                moduleActivityInjectors.forEach { injector ->
-                    if (injector.maybeInject(it)) {
-                        return@AndroidInjector
-                    }
+            is Activity -> moduleActivityInjectors.forEach { injector ->
+                if (injector.maybeInject(it)) {
+                    return@AndroidInjector
                 }
             }
-            else -> {
-                throw UnsupportedOperationException("Only Fragments and Activities are supported")
-            }
+            else -> throw UnsupportedOperationException("Only Fragments and Activities are supported")
         }
         throw IllegalStateException("Injector not found for $it")
     }

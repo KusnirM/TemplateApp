@@ -1,10 +1,11 @@
 /**
- * This is the build.gradle with the common configurations for ALL domain modules but NOT to l_common_domain.
- * Configurations that are specific to a single module should be added to their own build.gradle file.
+ * Common Configuration for Dynamic Feature Domain Module
  */
+
 apply from: "$rootProject.projectDir/config/buildsystem/domain_common_build.gradle"
 
 dependencies {
-    implementation project(':l_common_domain')
-//    implementation("ie.vhi:common-domain-jvm:${libsVersions.commonDomain}")
+//    todo: 1. set on multiplatform
+//    todo: 2. move kmp to separate repo
+    implementation project(':common_domain')
 }

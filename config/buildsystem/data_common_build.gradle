@@ -1,14 +1,10 @@
 /**
- * This is the build.gradle with the common configurations for ALL data modules PLUS l_common_data.
- * Configurations that are specific to data modules but NOT to l_common_data should be added to data_build.gradle
- * file.
+ * Common Configuration for all Data Modules
  */
-
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.devtools.ksp'
-//apply plugin: AndroidLibraryPlugin
 apply from: "${rootProject.projectDir}/config/buildsystem/versioning.gradle"
 
 android {
@@ -46,37 +42,18 @@ android {
 }
 
 dependencies {
-    implementation project(':l_common_domain')
-//    implementation("ie.vhi:common-domain-jvm:${libsVersions.commonDomain}")
-
+    implementation project(':common_domain')
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.dagger)
+//    todo 3. assist injection with hilt
+//    implementation(libs.dagger.hilt)
     implementation(libs.javax.inject)
     implementation(libs.timber)
-    implementation(libs.okhttp)
-    implementation(libs.logging.interceptor)
-    implementation(libs.retrofit.converter.gson)
-    implementation(libs.gson)
-    implementation(libs.retrofit)
-    implementation(libs.jodatime)
 
     ksp(libs.dagger.compiler)
-//    ksp(libs.moshi.kotlin.codegen)
-
-    testImplementation project(':l_common_test')
-//    testImplementation project(':l_test_common_android')
+//    ksp(libs.dagger.hilt.compiler)
     testImplementation(libs.junit.jupiter.api)
-    testImplementation(libs.junit.jupiter.params)
-//    testRuntimeOnly(libs.junit.jupiter.engine)
-    testImplementation(libs.mockk)
+    testRuntimeOnly(libs.junit.jupiter.engine)
     testImplementation(libs.kotlinx.coroutines.test)
-    testImplementation(libs.core.testing)
-
-    androidTestImplementation(libs.androidx.test.extjunit)
-
-    kspAndroidTest(libs.dagger.compiler)
-
-//    detektPlugins(libs.detekt.formatting)
-//    detektPlugins(libs.detekt.rules)
 }

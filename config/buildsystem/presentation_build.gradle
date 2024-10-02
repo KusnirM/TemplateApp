@@ -1,15 +1,14 @@
 /**
- * This is the build.gradle with the common configurations for ALL presentation modules but NOT to l_common_presenter.
- * Configurations that are specific to a single module should be added to their own build.gradle file.
+ * Common Configuration for Dynamic Feature Presentation Module
  */
+
 apply plugin: 'com.android.dynamic-feature'
 apply from: "$rootProject.projectDir/config/buildsystem/presentation_common_build.gradle"
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 dependencies {
-    implementation project(':l_common_presenter')
-    implementation project(':l_common_data')
     api project(':app')
-    implementation project(':l_common_domain')
-//    implementation("ie.vhi:common-domain-jvm:${libsVersions.commonDomain}")
+    implementation project(':common_presenter')
+    implementation project(':common_data')
+    implementation project(':common_domain')
 }

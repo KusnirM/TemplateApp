@@ -13,12 +13,7 @@ compileJava {
 }
 
 dependencies {
-    implementation project(":l_common_domain")
-    implementation(libs.gson)
-    implementation(libs.mockk)
-    testImplementation(libs.mockk)
-    implementation(libs.core.testing)
-    testImplementation(libs.core.testing)
+    implementation project(":common_domain")
     implementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.kotlinx.coroutines.test)
     implementation(libs.junit.jupiter.api)

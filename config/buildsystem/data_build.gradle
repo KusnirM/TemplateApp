@@ -1,9 +1,0 @@
-/**
- * This is the build.gradle with the common configurations for ALL data modules but NOT to l_common_data.
- * Configurations that are specific to a single module should be added to their own build.gradle file.
- */
-apply from: "$rootProject.projectDir/config/buildsystem/data_common_build.gradle"
-
-dependencies {
-    implementation project(':l_common_data')
-}

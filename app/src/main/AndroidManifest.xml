@@ -12,9 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:targetApi="31">
+        tools:targetApi="34">
         <activity
-            android:name="mk.templateApp.ui.main.MainActivity"
+            android:name="mk.templateApp.ui.MainActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme">

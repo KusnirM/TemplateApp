@@ -19,12 +19,13 @@ dependencyResolutionManagement {
     }
 }
 
-apply(from = "$rootDir/f_home/f_home.gradle")
 include(
     ":app",
-    ":l_common_domain",
-    ":l_common_presenter",
-    ":l_common_data",
-    ":l_common_test",
+
+    ":common_domain",
+    ":common_presenter",
+    ":common_data",
+
+    ":d_one",
+    ":d_two"
 )
- 

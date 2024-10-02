@@ -1,16 +1,10 @@
 /**
- * This is the build.gradle with the common configurations for ALL domain modules PLUS l_common_domain.
- * Configurations that are specific to domain modules but NOT to l_common_domain should be added to domain_build.gradle
- * file.
+ * Common Configuration for all Data Modules
  */
 
-//apply plugin: 'java'
+
 apply plugin: 'kotlin'
-//apply plugin: JacocoJavaLibraryPlugin
 apply from: "${rootProject.projectDir}/config/buildsystem/versioning.gradle"
-//
-//sourceCompatibility = JavaVersion.VERSION_17
-//targetCompatibility = JavaVersion.VERSION_17
 
 compileTestKotlin {
     kotlinOptions {
@@ -20,14 +14,8 @@ compileTestKotlin {
 
 dependencies {
     implementation(libs.kotlinx.coroutines.core)
-
-//    testImplementation project(':l_common_test')
-    testImplementation(libs.core.testing)
     testImplementation(libs.junit.jupiter.api)
-    testImplementation(libs.junit.jupiter.params)
     testRuntimeOnly(libs.junit.jupiter.engine)
-    testImplementation(libs.mockk)
-    testImplementation(libs.kotlinx.coroutines.test)
 }
 
 test {

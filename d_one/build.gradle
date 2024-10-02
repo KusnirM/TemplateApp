@@ -1,0 +1,5 @@
+apply from: "$rootProject.projectDir/config/buildsystem/presentation_build.gradle"
+
+android {
+    namespace "mk.templateApp.one"
+}

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TemplateApp</string>
-    <string name="title_f_home">f_home</string>
+    <string name="title_d_one">d_one</string>
+    <string name="title_d_two">d_two</string>
 </resources>

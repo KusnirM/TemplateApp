@@ -2,12 +2,24 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/authenticated_nav_graph"
-    app:startDestination="@id/home">
+    app:startDestination="@id/one_home">
 
     <fragment
-        android:id="@+id/home"
-        android:name="mk.templateApp.home.features.dashboard.DashboardView"
-        app:moduleName="f_home">
+        android:id="@+id/one_home"
+        android:name="mk.templateApp.one.ui.home.HomeView"
+        app:moduleName="@string/title_d_one">
+        <action
+            android:id="@+id/action_home_to_two"
+            app:destination="@+id/two_home" />
     </fragment>
+
+    <activity
+        android:id="@+id/two_home"
+        android:name="mk.templateApp.two.ui.dynamic.DynamicActivity"
+        app:moduleName="@string/title_d_two">
+        <argument
+            android:name="argument"
+            app:argType="string" />
+    </activity>
 
 </navigation>

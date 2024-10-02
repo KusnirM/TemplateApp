@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="38d3b859-efb6-44d3-ab01-2abe0e1642fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mk/templateApp/common/DfScreenType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mk/templateApp/common/findMethodByReflection.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mk/templateApp/common/invokeMethod.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mk/templateApp/common/loadClassByReflection.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mk/templateApp/common/loadDynamicFeatureScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mk/templateApp/ui/main/MainContent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_one/d_one.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/FirstScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/di/Bindings.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/di/HomeFeatureComponent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/di/ViewModelModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/features/dashboard/DashboardModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/features/dashboard/DashboardRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/features/dashboard/DashboardView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/features/dashboard/DashboardViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_two/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_two/d_two.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_two/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../d_two/src/main/java/mk/templateApp/two/SecondScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/templateApp/AndroidApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/templateApp/AndroidApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/templateApp/di/ApplicationComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/templateApp/di/ApplicationComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/templateApp/ui/main/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/templateApp/ui/main/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/navigation/a_main_nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/navigation/a_main_nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/buildsystem/data_common_build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../config/buildsystem/data_common_build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/buildsystem/domain_common_build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../config/buildsystem/domain_common_build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/buildsystem/presentation_common_build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../config/buildsystem/presentation_common_build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/f_home.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/one_data/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/one_data/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/one_data/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/java/mk/templateApp/home/data/di/ADataModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/java/mk/templateApp/home/data/di/ChatSupportNetModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/java/mk/templateApp/home/data/dto/AvailabilityStatusDTO.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/java/mk/templateApp/home/data/exceptions/GetChatHistoryException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/java/mk/templateApp/home/data/net/AClient.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/java/mk/templateApp/home/data/net/AClientImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/java/mk/templateApp/home/data/net/ChatSupportApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/java/mk/templateApp/home/data/net/ChatSupportClient.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/java/mk/templateApp/home/data/net/ChatSupportClientImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/java/mk/templateApp/home/data/repository/ChatHistoryLocalStore.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/java/mk/templateApp/home/data/repository/PremiumRepositoryImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/test/java/mk/templateApp/home/data/dto/ChatHistoryDetailsResponseDTOTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/test/java/mk/templateApp/home/data/net/AvailabilityStatusDTOTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/test/java/mk/templateApp/home/data/net/ChatSupportClientImplTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/test/java/mk/templateApp/home/data/repository/AClientImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/one_data/src/test/java/mk/templateApp/home/data/repository/AClientImplTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/test/java/mk/templateApp/home/data/repository/ChatHistoryLocalStoreTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/one_data/src/test/java/mk/templateApp/home/data/repository/ChatHistoryLocalStoreTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_data/src/test/java/mk/templateApp/home/data/repository/PremiumRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/one_data/src/test/java/mk/templateApp/home/data/repository/PremiumRepositoryImplTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_domain/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/one_domain/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_domain/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/one_domain/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_domain/src/main/java/mk/templateApp/home/domain/exceptions/SubmitFeedbackNetworkException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_domain/src/main/java/mk/templateApp/home/domain/ext/AScreenNames.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_domain/src/main/java/mk/templateApp/home/domain/interactors/GetAgentNameInteractor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_domain/src/main/java/mk/templateApp/home/domain/models/AvailabilityStatus.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_domain/src/main/java/mk/templateApp/home/domain/repositories/PremiumRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/home_domain/src/test/java/mk/templateApp/home/domain/interactors/SubmitChatFeedbackQuestionnaireInteractorTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/one_domain/src/test/java/mk/templateApp/home/domain/interactors/SubmitChatFeedbackQuestionnaireInteractorTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/java/mk/templateApp/home/BaseHomeView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/BaseHomeView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/java/mk/templateApp/home/HomeFeatureImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/OneFeatureImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/java/mk/templateApp/home/di/Bindings.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/java/mk/templateApp/home/di/HomeFeatureComponent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/java/mk/templateApp/home/di/HomeFeatureInjector.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/di/HomeFeatureInjector.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/java/mk/templateApp/home/di/ViewModelModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/java/mk/templateApp/home/features/dashboard/DashboardComposeView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../d_one/src/main/java/mk/templateApp/one/features/dashboard/DashboardComposeView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/java/mk/templateApp/home/features/dashboard/DashboardModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/java/mk/templateApp/home/features/dashboard/DashboardRouter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/java/mk/templateApp/home/features/dashboard/DashboardView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/main/java/mk/templateApp/home/features/dashboard/DashboardViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../f_home/src/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_data/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../l_common_data/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_data/src/main/java/mk/templateApp/commonData/di/modules/Constants.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_data/src/main/java/mk/templateApp/commonData/di/modules/NetModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_data/src/main/java/mk/templateApp/commonData/di/qualifiers/VHINetAuthenticated.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_data/src/main/java/mk/templateApp/commonData/dto/TransformToDomainModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_data/src/main/java/mk/templateApp/commonData/ext/Network.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_data/src/main/java/mk/templateApp/commonData/localstore/ReferenceLocalStore.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_data/src/main/java/mk/templateApp/commonData/persistent/BaseDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_data/src/main/java/mk/templateApp/commonData/sharedpreferences/SharedPrefsWrapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_domain/src/main/java/mk/templateApp/commonDomain/dynamicDelivery/FeatureType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../l_common_domain/src/main/java/mk/templateApp/commonDomain/dynamicDelivery/FeatureType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_presenter/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../l_common_presenter/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_presenter/src/main/java/mk/templateApp/commonPresenter/base/FeatureLoadingView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../l_common_presenter/src/main/java/mk/templateApp/commonPresenter/base/FeatureLoadingView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_presenter/src/main/java/mk/templateApp/commonPresenter/di/CommonDomainInteractorModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../l_common_presenter/src/main/java/mk/templateApp/commonPresenter/di/CommonDomainInteractorModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../l_common_test/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../l_common_test/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../settings.gradle.kts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2mtnayVQhFI6LYoLeFE4okJvlgR" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "android.gradle.sync.needed": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38d3b859-efb6-44d3-ab01-2abe0e1642fe" name="Changes" comment="" />
+      <created>1727904807469</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727904807469</updated>
+    </task>
+    <servers />
+  </component>
+</project>
