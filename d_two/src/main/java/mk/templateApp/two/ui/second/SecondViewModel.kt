@@ -18,7 +18,7 @@ internal class SecondViewModel @Inject constructor() :
         }
         viewModelScope.launch {
             newState { it.copy(loading = true) }
-            delay(1000)
+            delay(500)
             newState {
                 it.copy(
                     loading = false,
@@ -29,7 +29,7 @@ internal class SecondViewModel @Inject constructor() :
     }
 
     fun onThirdClicked() {
-        route(SecondNavEvent.NavigateToThird(Route.Third("3")))
+        navEvent(SecondNavEvent.NavigateToThird(Route.Third("3")))
     }
 
 }

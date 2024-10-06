@@ -18,7 +18,7 @@ internal class ThirdViewModel @Inject constructor() : BaseComposeViewModel<Third
         }
         viewModelScope.launch {
             newState { it.copy(loading = true) }
-            delay(1000)
+            delay(500)
             newState {
                 it.copy(
                     loading = false,

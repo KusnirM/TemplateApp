@@ -9,7 +9,7 @@ class UseCaseRunner @Inject constructor() {
         job: CoroutineScope,
         action: suspend () -> Result,
         onError: (Exception) -> Unit = {},
-        onSuccess: suspend (Result) -> Unit,
+        onSuccess: suspend (Result) -> Unit = {},
         preAction: suspend () -> Unit = {},
     ) = job.launch {
         try {

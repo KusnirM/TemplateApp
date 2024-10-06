@@ -12,12 +12,26 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import mk.templateApp.presenter.components.spacers.VhiColumnSpacer.Spacer32
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
+import androidx.navigation.toRoute
+import mk.templateApp.presenter.components.spacers.ColumnSpacer.Spacer32
 import mk.templateApp.presenter.components.text.TextTitleLarge
 import mk.templateApp.presenter.theming.dp16
+import mk.templateApp.two.di.ViewModelProvider
+import mk.templateApp.two.ui.dynamic.Route.Third
 
+internal fun NavGraphBuilder.third(controller: NavController){
+    composable<Third> { backStackEntry ->
+        val screen: Third = backStackEntry.toRoute()
+        val viewModel: ThirdViewModel = ViewModelProvider.thirdViewModel()
+        viewModel.loadInitialData(screen)
+        ThirdScreen(viewModel = viewModel)
+    }
+}
 @Composable
-internal fun ThirdScreen(viewModel: ThirdViewModel) {
+private fun ThirdScreen(viewModel: ThirdViewModel) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
     Column(

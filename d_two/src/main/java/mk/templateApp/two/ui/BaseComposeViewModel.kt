@@ -2,10 +2,14 @@ package mk.templateApp.two.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import mk.templateApp.presenter.base.NavEvent
 
 abstract class BaseComposeViewModel<T, NE : NavEvent>(initValue: T) : ViewModel() {
@@ -18,17 +22,13 @@ abstract class BaseComposeViewModel<T, NE : NavEvent>(initValue: T) : ViewModel(
             initialValue = initValue
         )
 
-    private val _route = MutableStateFlow<NE?>(null)
-    val route: StateFlow<NE?> = _route
-        .stateIn(
-            scope = viewModelScope,
-            started = SharingStarted.WhileSubscribed(5000L),
-            initialValue = null
-        )
+    private val _navEvent = Channel<NE>()
+    val navEvent: Flow<NE> = _navEvent.receiveAsFlow()
 
-    protected fun route(event: NE) {
-        _route.value = event
-        _route.value = null
+    protected fun navEvent(event: NE) {
+        viewModelScope.launch {
+            _navEvent.send(event)
+        }
     }
 
     protected fun newState(stateCopy: (T) -> T) {

@@ -12,16 +12,37 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
+import androidx.navigation.toRoute
+import mk.templateApp.presenter.base.ObserveEvent
 import mk.templateApp.presenter.components.Item
-import mk.templateApp.presenter.components.spacers.VhiColumnSpacer.Spacer32
+import mk.templateApp.presenter.components.spacers.ColumnSpacer.Spacer32
 import mk.templateApp.presenter.components.text.TextTitleLarge
 import mk.templateApp.presenter.theming.dp16
+import mk.templateApp.two.di.ViewModelProvider
+import mk.templateApp.two.ui.dynamic.Route.Second
+import mk.templateApp.two.ui.second.SecondNavEvent.NavigateToThird
+
+
+internal fun NavGraphBuilder.second(navController: NavController) {
+    composable<Second> { backStackEntry ->
+        val route: Second = backStackEntry.toRoute()
+        val viewModel: SecondViewModel = ViewModelProvider.secondViewModel()
+        viewModel.loadInitialData(route)
+        SecondScreen(viewModel = viewModel)
+        ObserveEvent(viewModel.navEvent) {
+            when (it) {
+                is NavigateToThird -> navController.navigate(it.route)
+            }
+        }
+    }
+}
 
 @Composable
-internal fun SecondScreen(
-    viewModel: SecondViewModel,
-    ) {
-    val state by  viewModel.state.collectAsStateWithLifecycle()
+private fun SecondScreen(viewModel: SecondViewModel) {
+    val state by viewModel.state.collectAsStateWithLifecycle()
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally

@@ -1,42 +1,38 @@
 package mk.templateApp.presenter.components
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ElevatedCard
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import androidx.compose.ui.unit.dp
 import mk.templateApp.presenter.components.text.TextBodyLarge
-import mk.templateApp.presenter.theming.cardElevation
 import mk.templateApp.presenter.theming.dp16
 
 @PreviewLightDark
 @Composable
 fun Item(
-    @PreviewParameter(ItemPreviewParams::class) title: String, onClick: () -> Unit = {}
+    @PreviewParameter(ItemPreviewParams::class) title: String,
+    loading: Boolean = false,
+    onClick: () -> Unit = {}
 ) {
-    ElevatedCard(
+    ElevatedButton(
         modifier = Modifier.fillMaxWidth(),
-        elevation = CardDefaults.elevatedCardElevation(cardElevation)
+        contentPadding = PaddingValues(dp16),
+        enabled = !loading,
+        onClick = onClick,
     ) {
-        Column(
-            modifier = Modifier
-                .background(MaterialTheme.colorScheme.primaryContainer)
-                .clickable(enabled = true, onClick = onClick)
-                .padding(dp16)
-                .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
-        ) {
+        if (loading) {
+            CircularProgressIndicator(Modifier.size(24.dp))
+        } else {
             TextBodyLarge(title)
         }
     }

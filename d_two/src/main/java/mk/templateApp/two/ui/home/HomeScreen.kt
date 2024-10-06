@@ -12,13 +12,33 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
+import mk.templateApp.presenter.base.ObserveEvent
 import mk.templateApp.presenter.components.Item
-import mk.templateApp.presenter.components.spacers.VhiColumnSpacer.Spacer32
+import mk.templateApp.presenter.components.spacers.ColumnSpacer.Spacer32
 import mk.templateApp.presenter.components.text.TextTitleLarge
 import mk.templateApp.presenter.theming.dp16
+import mk.templateApp.two.di.ViewModelProvider
+import mk.templateApp.two.ui.dynamic.Route.Home
+import mk.templateApp.two.ui.home.HomeNavEvent.NavigateToSecond
+
+internal fun NavGraphBuilder.home(controller: NavController) {
+    composable<Home> {
+        val viewModel: HomeViewModel = ViewModelProvider.homeViewModel()
+        viewModel.loadInitialData()
+        HomeScreen(viewModel = viewModel)
+        ObserveEvent(viewModel.navEvent) {
+            when (it) {
+                is NavigateToSecond -> controller.navigate(it.route)
+            }
+        }
+    }
+}
 
 @Composable
-internal fun HomeScreen(viewModel: HomeViewModel) {
+private fun HomeScreen(viewModel: HomeViewModel) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
     Column(
@@ -42,7 +62,11 @@ internal fun HomeScreen(viewModel: HomeViewModel) {
             false -> Column(Modifier.padding(horizontal = dp16)) {
                 TextTitleLarge("Loaded Value - ${state.loadedValue}")
                 Spacer32()
-                Item("Second Screen", onClick = viewModel::onSecondClicked)
+                Item(
+                    title = "Second Screen",
+                    loading = state.submissionLoading,
+                    onClick = viewModel::onSecondClicked
+                )
             }
         }
     }

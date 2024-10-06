@@ -12,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import mk.templateApp.presenter.components.Item
-import mk.templateApp.presenter.components.spacers.VhiColumnSpacer.Spacer32
+import mk.templateApp.presenter.components.spacers.ColumnSpacer.Spacer32
 import mk.templateApp.presenter.components.text.TextTitleLarge
 import mk.templateApp.presenter.theming.AppTheme
 import mk.templateApp.presenter.theming.dp16
@@ -44,7 +44,7 @@ internal fun HomeComposeView(
                 Spacer32()
 
                 Column(Modifier.padding(dp16)) {
-                    Item("Feature 2", twoClick)
+                    Item(title = "Feature 2", onClick = twoClick)
                 }
             }
         }
