@@ -7,7 +7,7 @@ apply from: "$rootProject.projectDir/config/buildsystem/presentation_common_buil
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 dependencies {
-    api project(':app')
+    implementation project(':app')
     implementation project(':common_presenter')
     implementation project(':common_data')
     implementation project(':common_domain')

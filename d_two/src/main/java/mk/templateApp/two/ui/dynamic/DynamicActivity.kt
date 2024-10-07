@@ -14,7 +14,7 @@ import mk.templateApp.presenter.base.InjectionActivity
 import mk.templateApp.presenter.theming.AppTheme
 import mk.templateApp.two.ui.dynamic.Route.Home
 import mk.templateApp.two.ui.home.home
-import mk.templateApp.two.ui.second.second
+import mk.templateApp.two.ui.caching.caching
 import mk.templateApp.two.ui.third.third
 
 @DynamicActivityScope
@@ -34,8 +34,8 @@ class DynamicActivity : InjectionActivity() {
                         startDestination = Home
                     ) {
                         home(controller)
-                        second(controller)
-                        third((controller))
+                        caching(controller)
+                        third()
                     }
                 }
             }
@@ -49,7 +49,7 @@ sealed interface Route {
     data object Home : Route
 
     @Serializable
-    data class Second(val arg: String) : Route
+    data class Caching(val arg: String) : Route
 
     @Serializable
     data class Third(val arg: String) : Route

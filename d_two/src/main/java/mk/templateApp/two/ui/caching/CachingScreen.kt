@@ -1,4 +1,4 @@
-package mk.templateApp.two.ui.second
+package mk.templateApp.two.ui.caching
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -22,16 +22,17 @@ import mk.templateApp.presenter.components.spacers.ColumnSpacer.Spacer32
 import mk.templateApp.presenter.components.text.TextTitleLarge
 import mk.templateApp.presenter.theming.dp16
 import mk.templateApp.two.di.ViewModelProvider
-import mk.templateApp.two.ui.dynamic.Route.Second
-import mk.templateApp.two.ui.second.SecondNavEvent.NavigateToThird
+import mk.templateApp.two.ui.caching.CachingNavEvent.NavigateToThird
+import mk.templateApp.two.ui.dynamic.Route.Caching
 
 
-internal fun NavGraphBuilder.second(navController: NavController) {
-    composable<Second> { backStackEntry ->
-        val route: Second = backStackEntry.toRoute()
-        val viewModel: SecondViewModel = ViewModelProvider.secondViewModel()
+internal fun NavGraphBuilder.caching(navController: NavController) {
+    composable<Caching> { backStackEntry ->
+        val viewModel: CachingViewModel = ViewModelProvider.cachingViewModel()
+        val route: Caching = backStackEntry.toRoute()
+        val state: CachingState by viewModel.state.collectAsStateWithLifecycle()
+        CachingScreen(state = state, thirdClick = viewModel::onThirdClicked)
         viewModel.loadInitialData(route)
-        SecondScreen(viewModel = viewModel)
         ObserveEvent(viewModel.navEvent) {
             when (it) {
                 is NavigateToThird -> navController.navigate(it.route)
@@ -41,8 +42,10 @@ internal fun NavGraphBuilder.second(navController: NavController) {
 }
 
 @Composable
-private fun SecondScreen(viewModel: SecondViewModel) {
-    val state by viewModel.state.collectAsStateWithLifecycle()
+private fun CachingScreen(
+    state: CachingState,
+    thirdClick: () -> Unit,
+) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -54,18 +57,16 @@ private fun SecondScreen(viewModel: SecondViewModel) {
                 .padding(dp16),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            TextTitleLarge("D_two Second-${state.id}")
+            TextTitleLarge("Caching - ${state.args}")
         }
         Spacer32()
 
         when (state.loading) {
             true -> CircularProgressIndicator()
-            false -> Column(Modifier.padding(horizontal = dp16)) {
-                Item(
-                    title = "Third Screen",
-                    onClick = viewModel::onThirdClicked
-                )
-            }
+            false -> Item(
+                title = "Third Screen",
+                onClick = thirdClick
+            )
 
             null -> Unit
         }

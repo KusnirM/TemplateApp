@@ -22,21 +22,19 @@ internal class HomeViewModel @Inject constructor(
             delay(500)
             newState {
                 it.copy(
-                    loading = false, loadedValue = "1"
+                    loading = false,
+                    loadedValue = "1",
                 )
             }
         }
     }
 
     fun onSecondClicked() {
-        useCaseRunner(job = viewModelScope, preAction = {
-            newState { it.copy(submissionLoading = true) }
-        }, action = {
-            delay(2000)
-        }, onSuccess = {
-            newState { it.copy(submissionLoading = false) }
-            navEvent(HomeNavEvent.NavigateToSecond(Route.Second("2")))
-        })
+        navEvent(HomeNavEvent.NavigateToSecond(Route.Caching("1->2")))
+    }
+
+    fun onThirdClicked() {
+        navEvent(HomeNavEvent.NavigateToThird(Route.Third("1->3")))
     }
 
 }
@@ -48,7 +46,8 @@ data class HomeState(
 )
 
 sealed interface HomeNavEvent : NavEvent {
-    data class NavigateToSecond(val route: Route.Second) : HomeNavEvent
+    data class NavigateToSecond(val route: Route.Caching) : HomeNavEvent
+    data class NavigateToThird(val route: Route.Third) : HomeNavEvent
 }
 
 

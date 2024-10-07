@@ -9,9 +9,7 @@ import androidx.navigation.NavGraph
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 
-open class Navigator(
-    private val fragment: Fragment,
-) {
+open class FragmentNavigator(private val fragment: Fragment) {
 
     fun navigateBack() {
         navController {
@@ -32,14 +30,6 @@ open class Navigator(
                     direction.arguments.putAll(this)
                 }
                 navigate(direction, navOptions)
-            }
-        }
-    }
-
-    fun navigate(destinationId: Int, bundle: Bundle? = null, navOptions: NavOptions? = null) {
-        navController {
-            if (canNavigateTo(destinationId)) {
-                navigate(destinationId, bundle, navOptions)
             }
         }
     }

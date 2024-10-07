@@ -27,19 +27,29 @@ import mk.templateApp.two.ui.home.HomeNavEvent.NavigateToSecond
 internal fun NavGraphBuilder.home(controller: NavController) {
     composable<Home> {
         val viewModel: HomeViewModel = ViewModelProvider.homeViewModel()
+        val state: HomeState by viewModel.state.collectAsStateWithLifecycle()
+        HomeScreen(
+            state = state,
+            cachingClick = viewModel::onSecondClicked,
+            thirdClick = viewModel::onThirdClicked
+
+        )
         viewModel.loadInitialData()
-        HomeScreen(viewModel = viewModel)
         ObserveEvent(viewModel.navEvent) {
             when (it) {
                 is NavigateToSecond -> controller.navigate(it.route)
+                is HomeNavEvent.NavigateToThird -> controller.navigate(it.route)
             }
         }
     }
 }
 
 @Composable
-private fun HomeScreen(viewModel: HomeViewModel) {
-    val state by viewModel.state.collectAsStateWithLifecycle()
+private fun HomeScreen(
+    state: HomeState,
+    cachingClick: () -> Unit,
+    thirdClick: () -> Unit,
+) {
 
     Column(
         verticalArrangement = Arrangement.Center,
@@ -52,7 +62,7 @@ private fun HomeScreen(viewModel: HomeViewModel) {
                 .padding(dp16),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            TextTitleLarge("D_Two::Home")
+            TextTitleLarge("Home")
         }
         Spacer32()
 
@@ -63,9 +73,13 @@ private fun HomeScreen(viewModel: HomeViewModel) {
                 TextTitleLarge("Loaded Value - ${state.loadedValue}")
                 Spacer32()
                 Item(
-                    title = "Second Screen",
-                    loading = state.submissionLoading,
-                    onClick = viewModel::onSecondClicked
+                    title = "Caching Screen",
+                    onClick = cachingClick
+                )
+                Spacer32()
+                Item(
+                    title = "Third Screen",
+                    onClick = thirdClick
                 )
             }
         }
