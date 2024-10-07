@@ -1,6 +1,0 @@
-apply from: "$rootProject.projectDir/config/buildsystem/domain_common_build.gradle"
-
-/**
- * Only configurations that are specific to this module should be added to this file.
- */
-

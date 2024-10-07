@@ -21,9 +21,6 @@ abstract class DaggerSplitApplication : SplitCompatApplication(), HasAndroidInje
 
     override fun onCreate() {
         super.onCreate()
-        // inject needs AndroidInjector<DaggerSplitApplication> but applicationInjector()
-        // returns AndroidInjector<out DaggerSplitApplication>
-        @Suppress("UNCHECKED_CAST")
         val applicationInjector = applicationInjector() as AndroidInjector<DaggerSplitApplication>
         applicationInjector.inject(this)
     }
