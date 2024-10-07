@@ -1,20 +1,18 @@
 [versions]
-androidGradle = "8.5.1"
+androidGradle = "8.5.2"
 androidxActivity = "1.9.2"
-androidxComposeBOM = "2024.06.00"
-androidxComposeCompiler = "1.5.14"
-androidxLifecycle = "2.5.1"
+androidxComposeBOM = "2024.09.03"
+androidxLifecycle = "2.8.6"
 androidxNavigation = "2.8.2"
 compileSdk = { strictly = "34" }
 dagger = "2.52"
 daggerHilt = "2.51.1"
-espresso = "3.5.1"
 junit = "4.13.2"
 junitJupiter = "5.10.2"
 junitVersion = "1.2.1"
 kotlin = "2.0.20"
-kotlinSerialization = "1.5.0"
-kotlinxCoroutines = "1.8.0"
+kotlinSerialization = "1.7.3"
+kotlinxCoroutines = "1.9.0"
 ksp = "2.0.20-1.0.24"
 minSdk = { strictly = "26" }
 targetSdk = { strictly = "34" }
@@ -25,7 +23,6 @@ versionName = "1.0.0"
 androidx-annotation = { group = "androidx.annotation", name = "annotation", version = "1.8.2" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.7.0" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version = "1.13.1" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 
 compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBOM" }
@@ -64,7 +61,6 @@ navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fr
 navigation-safeargs = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "androidxNavigation" }
 navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androidxNavigation" }
 timber = { group = "com.jakewharton.timber", name = "timber", version = "5.0.1" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradle" }
