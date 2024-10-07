@@ -70,9 +70,3 @@ kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 dagger-hilt = { id = "com.google.dagger.hilt.android",  version = "2.51.1" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-
-#todo test plugin
-#navigation-safeargs = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "androidxNavigation" }
-
-
-

@@ -65,6 +65,10 @@ captures/
 .idea/jarRepositories.xml
 .idea/deploymentTargetSelector.xml
 .idea/other.xml
+.idea/appInsightsSettings.xml
+.idea/migrations.xml
+.idea/runConfigurations.xml
+.idea/studiobot.xml
 
 
 # OS-specific files
