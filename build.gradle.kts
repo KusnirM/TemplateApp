@@ -12,4 +12,5 @@ plugins {
     alias(libs.plugins.kotlin.ksp) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.android.dynamic.feature) apply false
+    alias(libs.plugins.compose.compiler) apply false
 }

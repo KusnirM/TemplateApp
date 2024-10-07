@@ -5,6 +5,8 @@
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.devtools.ksp'
 apply from: "${rootProject.projectDir}/config/buildsystem/versioning.gradle"
+apply plugin: 'org.jetbrains.kotlin.plugin.compose'
+
 
 android {
     compileSdk libs.versions.compileSdk.get() as int
@@ -26,10 +28,6 @@ android {
     buildFeatures {
         buildConfig true
         compose true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
     }
 
     compileOptions {

@@ -12,10 +12,10 @@ espresso = "3.5.1"
 junit = "4.13.2"
 junitJupiter = "5.10.2"
 junitVersion = "1.2.1"
-kotlin = "1.9.24"
+kotlin = "2.0.20"
 kotlinSerialization = "1.5.0"
 kotlinxCoroutines = "1.8.0"
-ksp = "1.9.24-1.0.20"
+ksp = "2.0.20-1.0.24"
 minSdk = { strictly = "26" }
 targetSdk = { strictly = "34" }
 versionCode = "1"
@@ -73,6 +73,7 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 dagger-hilt = { id = "com.google.dagger.hilt.android",  version = "2.51.1" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 #todo test plugin
 #navigation-safeargs = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "androidxNavigation" }
