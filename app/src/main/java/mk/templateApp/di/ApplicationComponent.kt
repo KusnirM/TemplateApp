@@ -6,17 +6,12 @@ import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import mk.templateApp.AndroidApp
 import mk.templateApp.commonData.di.scopes.AppScope
-import mk.templateApp.presenter.dynamicDelivery.FeatureCache
-import mk.templateApp.di.modules.ApplicationModule
+import mk.templateApp.commonDomain.dynamicFeature.DomainCoroutineDispatcherProvider
 import mk.templateApp.di.modules.AppBindings
+import mk.templateApp.di.modules.ApplicationModule
+import mk.templateApp.di.modules.CommonDomainUseCaseModule
 import mk.templateApp.dynamicFeature.FeatureLoaderImpl
-
-//
-//@Singleton
-//@Component
-//interface  ApplicationComponent {
-//
-//}
+import mk.templateApp.presenter.dynamicDelivery.FeatureCache
 
 @AppScope
 @Component(
@@ -24,6 +19,7 @@ import mk.templateApp.dynamicFeature.FeatureLoaderImpl
         AndroidInjectionModule::class,
         AppBindings::class,
         ApplicationModule::class,
+        CommonDomainUseCaseModule::class
     ]
 )
 interface ApplicationComponent : AndroidInjector<AndroidApp> {
@@ -35,4 +31,6 @@ interface ApplicationComponent : AndroidInjector<AndroidApp> {
     fun provideFeatureCache(): FeatureCache
 
     fun featureLoaderImpl(): FeatureLoaderImpl
+
+    fun domainCoroutineDispatcherProvider(): DomainCoroutineDispatcherProvider
 }

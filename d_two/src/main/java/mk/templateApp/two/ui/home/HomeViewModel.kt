@@ -9,6 +9,7 @@ import mk.templateApp.two.ui.BaseComposeViewModel
 import mk.templateApp.two.ui.dynamic.Route
 import javax.inject.Inject
 
+@HomeScope
 internal class HomeViewModel @Inject constructor(
     private val useCaseRunner: UseCaseRunner,
 ) : BaseComposeViewModel<HomeState, HomeNavEvent>(HomeState()) {

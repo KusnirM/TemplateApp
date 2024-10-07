@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -18,10 +19,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import mk.templateApp.presenter.base.ObserveEvent
 import mk.templateApp.presenter.components.Item
+import mk.templateApp.presenter.components.spacers.ColumnSpacer.Spacer16
 import mk.templateApp.presenter.components.spacers.ColumnSpacer.Spacer32
 import mk.templateApp.presenter.components.text.TextTitleLarge
 import mk.templateApp.presenter.theming.dp16
 import mk.templateApp.two.di.ViewModelProvider
+import mk.templateApp.two.domain.model.Movie
 import mk.templateApp.two.ui.caching.CachingNavEvent.NavigateToThird
 import mk.templateApp.two.ui.dynamic.Route.Caching
 
@@ -47,8 +50,7 @@ private fun CachingScreen(
     thirdClick: () -> Unit,
 ) {
     Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Column(
             Modifier
@@ -63,12 +65,29 @@ private fun CachingScreen(
 
         when (state.loading) {
             true -> CircularProgressIndicator()
-            false -> Item(
-                title = "Third Screen",
-                onClick = thirdClick
-            )
+            false -> Column {
+                Item(title = "Third Screen", onClick = thirdClick)
+                Spacer32()
+
+                TextTitleLarge("Movies")
+                state.movies.forEach {
+                    Spacer16()
+                    MoviewItem(it)
+                }
+            }
 
             null -> Unit
         }
+    }
+}
+
+@Composable
+private fun MoviewItem(movie: Movie) {
+    Card(
+        Modifier
+            .fillMaxWidth()
+            .padding(dp16)
+    ) {
+        TextTitleLarge(movie.name)
     }
 }

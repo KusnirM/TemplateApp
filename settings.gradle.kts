@@ -19,6 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
+apply(from = "${rootDir}/d_two/two.gradle")
 include(
     ":app",
 
@@ -26,6 +27,6 @@ include(
     ":common_presenter",
     ":common_data",
 
-    ":d_one",
-    ":d_two"
+    ":d_one"
+//    ":d_two"
 )

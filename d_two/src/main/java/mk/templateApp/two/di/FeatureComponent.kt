@@ -5,13 +5,16 @@ import dagger.android.AndroidInjectionModule
 import mk.templateApp.commonData.di.scopes.ModuleScope
 import mk.templateApp.di.ApplicationComponent
 import mk.templateApp.two.FeatureImpl
+import mk.templateApp.two.data.di.TwoDataModule
+import mk.templateApp.two.ui.caching.CachingComponent
 
 @ModuleScope
 @Component(
     dependencies = [ApplicationComponent::class],
     modules = [
         Bindings::class,
-        AndroidInjectionModule::class
+        AndroidInjectionModule::class,
+        TwoDataModule::class
     ]
 )
 internal interface FeatureComponent {
@@ -24,4 +27,5 @@ internal interface FeatureComponent {
         fun applicationComponent(appComp: ApplicationComponent): Builder
         fun build(): FeatureComponent
     }
+    fun cachingComponentBuilder() :CachingComponent.Builder
 }

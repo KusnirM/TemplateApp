@@ -4,16 +4,18 @@ import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Component
 import dagger.Module
+import dagger.Subcomponent
 import dagger.multibindings.IntoMap
 import mk.templateApp.presenter.base.ViewModelKey
+import mk.templateApp.two.di.TwoDomainInteractorModule
 import javax.inject.Scope
 
 @CachingScope
-@Component(modules = [CachingModule::class])
+@Subcomponent(modules = [CachingModule::class])
 internal interface CachingComponent {
 
 
-    @Component.Builder
+    @Subcomponent.Builder
     interface Builder {
 
         fun build(): CachingComponent
@@ -26,7 +28,7 @@ internal interface CachingComponent {
 @Retention(AnnotationRetention.RUNTIME)
 internal annotation class CachingScope
 
-@Module
+@Module(includes = [TwoDomainInteractorModule::class])
 internal interface CachingModule {
 
     @Binds

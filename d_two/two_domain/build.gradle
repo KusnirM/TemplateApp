@@ -1,0 +1,1 @@
+apply from: "$rootProject.projectDir/config/buildsystem/domain_build.gradle"

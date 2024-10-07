@@ -8,6 +8,7 @@ import mk.templateApp.two.ui.BaseComposeViewModel
 import mk.templateApp.two.ui.dynamic.Route
 import javax.inject.Inject
 
+@ThirdScope
 internal class ThirdViewModel @Inject constructor() : BaseComposeViewModel<ThirdState, NavEvent>(ThirdState()) {
 
 
