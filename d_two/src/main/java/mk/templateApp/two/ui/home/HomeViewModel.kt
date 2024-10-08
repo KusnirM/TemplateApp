@@ -31,7 +31,7 @@ internal class HomeViewModel @Inject constructor(
     }
 
     fun onSecondClicked() {
-        navEvent(HomeNavEvent.NavigateToSecond(Route.Caching("1->2")))
+        navEvent(HomeNavEvent.NavigateToSecond(Route.Caching))
     }
 
     fun onThirdClicked() {

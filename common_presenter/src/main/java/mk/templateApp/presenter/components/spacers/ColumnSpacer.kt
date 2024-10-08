@@ -8,7 +8,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import mk.templateApp.presenter.theming.dp16
 import mk.templateApp.presenter.theming.dp32
-import mk.templateApp.presenter.theming.dp64
 
 object ColumnSpacer {
     @Composable
@@ -25,11 +24,4 @@ object ColumnSpacer {
     fun ColumnScope.Spacer32() {
         Spacer(dp32)
     }
-
-    @Composable
-    fun ColumnScope.Spacer64() {
-        Spacer(dp64)
-    }
-
-
 }

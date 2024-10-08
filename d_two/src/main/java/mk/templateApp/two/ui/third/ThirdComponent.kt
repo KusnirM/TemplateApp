@@ -6,7 +6,6 @@ import dagger.Component
 import dagger.Module
 import dagger.multibindings.IntoMap
 import mk.templateApp.presenter.base.ViewModelKey
-import mk.templateApp.two.ui.third.ThirdViewModel
 import javax.inject.Scope
 
 @ThirdScope
@@ -20,7 +19,7 @@ internal interface ThirdComponent {
         fun build(): ThirdComponent
     }
 
-    val vm: ThirdViewModel
+    val viewModel: ThirdViewModel
 }
 
 @Scope

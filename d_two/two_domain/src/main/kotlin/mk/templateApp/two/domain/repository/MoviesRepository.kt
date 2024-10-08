@@ -1,9 +1,9 @@
 package mk.templateApp.two.domain.repository
 
+import kotlinx.coroutines.flow.Flow
 import mk.templateApp.two.domain.model.Movie
 
 interface MoviesRepository {
-    fun getMovies(): List<Movie>
-    fun getFavouriteMovies(): List<Movie>
-    fun setFavouriteMovie(id: Int)
+    val movies: Flow<List<Movie>>
+    suspend fun setFavouriteMovie(movie: Movie)
 }

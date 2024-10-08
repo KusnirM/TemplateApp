@@ -19,7 +19,7 @@ internal interface HomeComponent {
         fun build(): HomeComponent
     }
 
-    val vm: HomeViewModel
+    val viewModel: HomeViewModel
 }
 
 @Scope

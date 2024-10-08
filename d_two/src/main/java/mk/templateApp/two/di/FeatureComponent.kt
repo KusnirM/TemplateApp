@@ -6,7 +6,7 @@ import mk.templateApp.commonData.di.scopes.ModuleScope
 import mk.templateApp.di.ApplicationComponent
 import mk.templateApp.two.FeatureImpl
 import mk.templateApp.two.data.di.TwoDataModule
-import mk.templateApp.two.ui.caching.CachingComponent
+import mk.templateApp.two.ui.movieList.MovieListComponent
 
 @ModuleScope
 @Component(
@@ -27,5 +27,5 @@ internal interface FeatureComponent {
         fun applicationComponent(appComp: ApplicationComponent): Builder
         fun build(): FeatureComponent
     }
-    fun cachingComponentBuilder() :CachingComponent.Builder
+    fun movieListComponentBuilder() :MovieListComponent.Builder
 }

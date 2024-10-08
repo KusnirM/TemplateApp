@@ -12,9 +12,8 @@ import mk.templateApp.AndroidApp
 import mk.templateApp.commonDomain.dynamicFeature.FeatureType
 import mk.templateApp.presenter.base.InjectionActivity
 import mk.templateApp.presenter.theming.AppTheme
-import mk.templateApp.two.ui.dynamic.Route.Home
 import mk.templateApp.two.ui.home.home
-import mk.templateApp.two.ui.caching.caching
+import mk.templateApp.two.ui.movieList.movieList
 import mk.templateApp.two.ui.third.third
 
 @DynamicActivityScope
@@ -31,10 +30,10 @@ class DynamicActivity : InjectionActivity() {
                     NavHost(
                         modifier = Modifier.padding(innerPadding),
                         navController = controller,
-                        startDestination = Home
+                        startDestination = Route.Caching
                     ) {
                         home(controller)
-                        caching(controller)
+                        movieList()
                         third()
                     }
                 }
@@ -49,7 +48,7 @@ sealed interface Route {
     data object Home : Route
 
     @Serializable
-    data class Caching(val arg: String) : Route
+    data object Caching : Route
 
     @Serializable
     data class Third(val arg: String) : Route

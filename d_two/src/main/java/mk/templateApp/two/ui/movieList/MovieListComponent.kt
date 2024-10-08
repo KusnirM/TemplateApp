@@ -1,8 +1,7 @@
-package mk.templateApp.two.ui.caching
+package mk.templateApp.two.ui.movieList
 
 import androidx.lifecycle.ViewModel
 import dagger.Binds
-import dagger.Component
 import dagger.Module
 import dagger.Subcomponent
 import dagger.multibindings.IntoMap
@@ -10,30 +9,30 @@ import mk.templateApp.presenter.base.ViewModelKey
 import mk.templateApp.two.di.TwoDomainInteractorModule
 import javax.inject.Scope
 
-@CachingScope
-@Subcomponent(modules = [CachingModule::class])
-internal interface CachingComponent {
+@MovieListScope
+@Subcomponent(modules = [MovieListModule::class])
+internal interface MovieListComponent {
 
 
     @Subcomponent.Builder
     interface Builder {
 
-        fun build(): CachingComponent
+        fun build(): MovieListComponent
     }
 
-    val vm: CachingViewModel
+    val viewModel: MovieListViewModel
 }
 
 @Scope
 @Retention(AnnotationRetention.RUNTIME)
-internal annotation class CachingScope
+internal annotation class MovieListScope
 
 @Module(includes = [TwoDomainInteractorModule::class])
-internal interface CachingModule {
+internal interface MovieListModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(CachingViewModel::class)
-    @CachingScope
-    fun secondViewModel(viewModel: CachingViewModel): ViewModel
+    @ViewModelKey(MovieListViewModel::class)
+    @MovieListScope
+    fun viewModel(viewModel: MovieListViewModel): ViewModel
 }

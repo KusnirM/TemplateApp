@@ -44,6 +44,7 @@ android {
 dependencies {
     implementation project(':common_domain')
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.datastore.preferences)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.dagger)
 //    todo 3. assist injection with hilt
