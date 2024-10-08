@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -62,9 +63,19 @@ private fun MoviesListScreen(
             TextTitleLarge(stringResource(R.string.all_you_can_watch))
         }
         Spacer32()
-        Column(Modifier.padding(horizontal = dp16)) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = dp16),
+        ) {
             TextTitleLargePrimaryBold("Movies")
-            MovieList(state.movies, movieClick)
+            if (state.loading) {
+                Spacer32()
+                CircularProgressIndicator()
+            } else {
+                MovieList(state.movies, movieClick)
+            }
         }
     }
 }

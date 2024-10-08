@@ -5,6 +5,7 @@ import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import mk.templateApp.AndroidApp
+import mk.templateApp.commonData.di.CommonNetModule
 import mk.templateApp.commonData.di.scopes.AppScope
 import mk.templateApp.commonDomain.dynamicFeature.DomainCoroutineDispatcherProvider
 import mk.templateApp.di.modules.AppBindings
@@ -19,7 +20,8 @@ import mk.templateApp.presenter.dynamicDelivery.FeatureCache
         AndroidInjectionModule::class,
         AppBindings::class,
         ApplicationModule::class,
-        CommonDomainUseCaseModule::class
+        CommonDomainUseCaseModule::class,
+        CommonNetModule::class
     ]
 )
 interface ApplicationComponent : AndroidInjector<AndroidApp> {

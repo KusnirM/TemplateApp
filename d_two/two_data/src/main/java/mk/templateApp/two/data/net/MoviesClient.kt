@@ -7,12 +7,10 @@ interface MoviesClient {
     suspend fun getMovies(): List<MovieDTO>
 }
 
-class MoviesClientImpl @Inject constructor() : MoviesClient {
+class MoviesClientImpl @Inject constructor(
+    private val api: MovieApi
+) : MoviesClient {
     override suspend fun getMovies(): List<MovieDTO> {
-        return listOf(
-            MovieDTO(0, "Home Alone"),
-            MovieDTO(1, "Lenka in  WonderLand"),
-            MovieDTO(2, "Inception"),
-        )
+        return api.getMovies()
     }
 }

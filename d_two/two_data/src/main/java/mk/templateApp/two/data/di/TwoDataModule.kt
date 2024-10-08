@@ -9,6 +9,8 @@ import mk.templateApp.commonData.di.scopes.ModuleScope
 import mk.templateApp.two.data.di.TwoDataModule.Companion.FLAG_PREFERENCES_NAME
 import mk.templateApp.two.data.localStore.MovieLocalRepository
 import mk.templateApp.two.data.localStore.MovieLocalRepositoryImpl
+import mk.templateApp.two.data.net.MovieApi
+import mk.templateApp.two.data.net.MovieApiImpl
 import mk.templateApp.two.data.net.MoviesClient
 import mk.templateApp.two.data.net.MoviesClientImpl
 import mk.templateApp.two.data.repository.MoviesRepositoryImpl
@@ -26,6 +28,10 @@ abstract class TwoDataModule {
     @ModuleScope
     @Binds
     internal abstract fun bindMoviesClient(impl: MoviesClientImpl): MoviesClient
+
+    @ModuleScope
+    @Binds
+    internal abstract fun movieApi(impl: MovieApiImpl): MovieApi
 
     companion object {
 

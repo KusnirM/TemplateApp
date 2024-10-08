@@ -16,7 +16,7 @@ class MoviesRepositoryImpl @Inject constructor(
 ) : MoviesRepository {
     override val movies: Flow<List<Movie>> = allMovies()
         .combine(localStore.favMovies) { all: List<Movie>, fav: List<Int> ->
-            all.map { movie: Movie -> movie.copy(favourite = movie.id in fav) }
+            all.map { it.copy(favourite = it.id in fav) }
         }
 
     private fun allMovies(): Flow<List<Movie>> {

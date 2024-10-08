@@ -11,5 +11,4 @@ android {
 dependencies {
     implementation(project(":two_data"))
     implementation(project(":two_domain"))
-    implementation(libs.kotlinx.serialization.json)
 }

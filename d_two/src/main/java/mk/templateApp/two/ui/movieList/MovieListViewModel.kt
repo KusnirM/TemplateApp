@@ -18,7 +18,7 @@ internal class MovieListViewModel @Inject constructor(
 ) : ViewModel() {
 
     val movies = getMoviesUseCase()
-        .map { MovieListState(movies = it) }
+        .map { MovieListState(movies = it, loading = false) }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000),
@@ -35,5 +35,6 @@ internal class MovieListViewModel @Inject constructor(
 }
 
 data class MovieListState(
+    val loading: Boolean = true,
     val movies: List<Movie> = emptyList(),
 )

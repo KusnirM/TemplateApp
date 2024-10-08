@@ -4,6 +4,7 @@ plugins {
     id("com.android.library")
     id("com.google.devtools.ksp")
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 apply(from = "$rootDir/config/buildsystem/data_common_build.gradle")
 

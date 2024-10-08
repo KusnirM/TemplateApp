@@ -49,6 +49,12 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     implementation(platform(libs.compose.bom))
 
+    implementation(libs.ktor.client.android)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.logging)
+    implementation(libs.ktor.client.okhttp)
+
     implementation(libs.lifecycle.runtime.ktx)
 
     testImplementation(libs.junit)

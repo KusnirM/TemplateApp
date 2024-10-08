@@ -63,6 +63,6 @@ class SingleLiveData<T> : MutableLiveData<T>() {
 
     override fun setValue(t: T?) {
         pending.set(true)
-        super.value = t
+        super.setValue(t)
     }
 }
