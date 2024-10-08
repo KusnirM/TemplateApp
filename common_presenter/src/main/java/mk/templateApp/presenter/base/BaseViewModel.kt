@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import java.util.concurrent.atomic.AtomicBoolean
 
-abstract class BaseViewModel<VIEW_STATE: ViewState, NAV_EVENT: NavEvent> : ViewModel() {
+abstract class BaseViewModel<VIEW_STATE : ViewState, NAV_EVENT : NavEvent> : ViewModel() {
 
     abstract fun defaultState(): VIEW_STATE
 
@@ -38,10 +38,11 @@ abstract class BaseViewModel<VIEW_STATE: ViewState, NAV_EVENT: NavEvent> : ViewM
 
 interface NavEvent
 interface ViewState
-class DefaultViewState: ViewState
+class DefaultViewState : ViewState
 
 @Composable
-fun <T: ViewState, Nav_event: NavEvent> BaseViewModel<T, Nav_event>.observeAsState(): State<T> = viewState.observeAsState(defaultState())
+fun <T : ViewState, Nav_event : NavEvent> BaseViewModel<T, Nav_event>.observeAsState(): State<T> =
+    viewState.observeAsState(defaultState())
 
 
 class SingleLiveData<T> : MutableLiveData<T>() {
@@ -62,6 +63,6 @@ class SingleLiveData<T> : MutableLiveData<T>() {
 
     override fun setValue(t: T?) {
         pending.set(true)
-        super.setValue(t)
+        super.value = t
     }
 }

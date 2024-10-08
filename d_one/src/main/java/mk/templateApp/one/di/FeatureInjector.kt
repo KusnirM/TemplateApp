@@ -5,9 +5,9 @@ import androidx.annotation.Keep
 import androidx.fragment.app.Fragment
 import dagger.android.DispatchingAndroidInjector
 import mk.templateApp.AndroidApp
-import mk.templateApp.presenter.dynamicDelivery.Feature
 import mk.templateApp.di.BaseModuleInjector
 import mk.templateApp.one.FeatureImpl
+import mk.templateApp.presenter.dynamicDelivery.Feature
 import javax.inject.Inject
 
 @Keep

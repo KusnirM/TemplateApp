@@ -21,7 +21,7 @@ import mk.templateApp.presenter.theming.dp16
 import mk.templateApp.two.di.ViewModelProvider
 import mk.templateApp.two.ui.dynamic.Route.Third
 
-internal fun NavGraphBuilder.third(){
+internal fun NavGraphBuilder.third() {
     composable<Third> { backStackEntry ->
         val screen: Third = backStackEntry.toRoute()
         val viewModel: ThirdViewModel = ViewModelProvider.thirdViewModel()
@@ -29,6 +29,7 @@ internal fun NavGraphBuilder.third(){
         viewModel.loadInitialData(screen)
     }
 }
+
 @Composable
 private fun ThirdScreen(viewModel: ThirdViewModel) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -48,7 +49,7 @@ private fun ThirdScreen(viewModel: ThirdViewModel) {
         }
         Spacer32()
 
-        when(state.loading) {
+        when (state.loading) {
             true -> CircularProgressIndicator()
             false -> TextTitleLarge(text = state.loadedValue)
             null -> Unit

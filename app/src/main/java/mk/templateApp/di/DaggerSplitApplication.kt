@@ -35,11 +35,13 @@ abstract class DaggerSplitApplication : SplitCompatApplication(), HasAndroidInje
                     return@AndroidInjector
                 }
             }
+
             is Activity -> moduleActivityInjectors.forEach { injector ->
                 if (injector.maybeInject(it)) {
                     return@AndroidInjector
                 }
             }
+
             else -> throw UnsupportedOperationException("Only Fragments and Activities are supported")
         }
         throw IllegalStateException("Injector not found for $it")

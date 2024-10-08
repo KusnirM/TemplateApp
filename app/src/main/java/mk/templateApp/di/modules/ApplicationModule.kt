@@ -6,8 +6,8 @@ import dagger.Module
 import dagger.Provides
 import mk.templateApp.commonData.di.scopes.AppScope
 import mk.templateApp.commonDomain.dynamicFeature.FeatureLoader
-import mk.templateApp.presenter.dynamicDelivery.FeatureCache
 import mk.templateApp.dynamicFeature.FeatureLoaderImpl
+import mk.templateApp.presenter.dynamicDelivery.FeatureCache
 
 
 @Module

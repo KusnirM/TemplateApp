@@ -29,14 +29,14 @@ annotation class ViewModelKey(val value: KClass<out ViewModel>)
 @Suppress("UNCHECKED_CAST")
 @Composable
 inline fun <reified T : ViewModel> daggerViewModel(
-    inject : T,
+    inject: T,
     key: String? = null,
 ): T = viewModel(
-        modelClass = T::class.java,
-        key = key,
-        factory = object : ViewModelProvider.Factory {
-            override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                return inject as T
-            }
+    modelClass = T::class.java,
+    key = key,
+    factory = object : ViewModelProvider.Factory {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            return inject as T
         }
-    )
+    }
+)

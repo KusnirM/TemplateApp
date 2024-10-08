@@ -27,5 +27,6 @@ internal interface FeatureComponent {
         fun applicationComponent(appComp: ApplicationComponent): Builder
         fun build(): FeatureComponent
     }
-    fun movieListComponentBuilder() :MovieListComponent.Builder
+
+    fun movieListComponentBuilder(): MovieListComponent.Builder
 }

@@ -1,7 +1,7 @@
 package mk.templateApp.commonDomain.usecases.base
 
 
-import kotlinx.coroutines.CoroutineDispatcher;
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 

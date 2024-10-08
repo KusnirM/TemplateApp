@@ -4,9 +4,9 @@ import android.content.Context
 import dagger.android.AndroidInjector
 import mk.templateApp.commonDomain.dynamicFeature.FeatureType
 import mk.templateApp.di.ApplicationComponent
+import mk.templateApp.di.BaseModuleInjector
 import mk.templateApp.di.DaggerApplicationComponent
 import mk.templateApp.di.DaggerSplitApplication
-import mk.templateApp.di.BaseModuleInjector
 import mk.templateApp.di.modules.ApplicationModule
 import mk.templateApp.dynamicFeature.FeatureLoaderImpl
 import mk.templateApp.presenter.dynamicDelivery.FeatureCache

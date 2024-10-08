@@ -21,12 +21,12 @@ class MoviesRepositoryImpl @Inject constructor(
 
     private fun allMovies(): Flow<List<Movie>> {
         return flow {
-           val movies =  if (localStore.hasCachedMovies) {
+            val movies = if (localStore.hasCachedMovies) {
                 localStore.cachedMovies()!!
             } else {
                 val movies = client.getMovies().map(MovieDTO::transform)
                 localStore.cacheMovies(movies)
-               movies
+                movies
             }
             emit(movies)
         }
