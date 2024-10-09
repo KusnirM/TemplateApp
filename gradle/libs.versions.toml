@@ -1,11 +1,11 @@
 [versions]
-androidGradle = "8.5.2"
+androidGradle = "8.6.1"
 androidxActivity = "1.9.2"
 androidxComposeBOM = "2024.09.03"
 androidxDataStore = "1.1.1"
 androidxLifecycle = "2.8.6"
 androidxNavigation = "2.8.2"
-compileSdk = { strictly = "34" }
+compileSdk = { strictly = "35" }
 dagger = "2.52"
 daggerHilt = "2.51.1"
 junit = "4.13.2"
@@ -17,7 +17,7 @@ ksp = "2.0.20-1.0.24"
 ktor = "2.3.12"
 
 minSdk = { strictly = "26" }
-targetSdk = { strictly = "34" }
+targetSdk = { strictly = "35" }
 versionCode = "1"
 versionName = "1.0.0"
 
