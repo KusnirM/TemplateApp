@@ -1,0 +1,2 @@
+include(":d_one", ":one_data", ":one_domain")
+project(":one_domain").projectDir = new File(rootDir, "d_one/one_domain")

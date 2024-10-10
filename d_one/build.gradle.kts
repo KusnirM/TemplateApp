@@ -8,3 +8,7 @@ apply(from = "$rootDir/config/buildsystem/presentation_build.gradle")
 android {
     namespace = "mk.templateApp.one"
 }
+
+dependencies {
+    implementation(project(":one_domain"))
+}

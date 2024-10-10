@@ -19,14 +19,13 @@ dependencyResolutionManagement {
     }
 }
 
+apply(from = "${rootDir}/d_one/one.gradle")
 apply(from = "${rootDir}/d_two/two.gradle")
 include(
     ":app",
 
+    ":common_data",
     ":common_domain",
     ":common_presenter",
-    ":common_data",
-
-    ":d_one"
-//    ":d_two"
-)
+    ":common_test",
+    )
