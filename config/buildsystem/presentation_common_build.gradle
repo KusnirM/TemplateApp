@@ -4,7 +4,6 @@
 
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.devtools.ksp'
-apply from: "${rootProject.projectDir}/config/buildsystem/versioning.gradle"
 apply plugin: 'org.jetbrains.kotlin.plugin.compose'
 
 

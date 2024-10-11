@@ -1,25 +1,15 @@
-//apply(from = "$rootDir/config/buildsystem/domain_common_build.gradle")
-
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    id("com.android.library")
 }
 
 kotlin {
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
-            baseName = "common_domain"
-            isStatic = true
-        }
-    }
+    jvmToolchain(17)
+    jvm()
 
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            implementation(kotlin("stdlib-common"))
+            implementation (libs.kotlinx.coroutines.core)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

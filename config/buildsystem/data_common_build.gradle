@@ -5,7 +5,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.devtools.ksp'
-apply from: "${rootProject.projectDir}/config/buildsystem/versioning.gradle"
 
 android {
     compileSdk libs.versions.compileSdk.get() as int
