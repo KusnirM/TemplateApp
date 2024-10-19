@@ -5,7 +5,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.mapNotNull
+import kotlinx.coroutines.flow.map
 import kotlinx.serialization.json.Json
 import mk.templateApp.two.data.localStore.MovieLocalRepositoryImpl.PreferencesKeys.FAVOURITE_MOVIE
 import mk.templateApp.two.domain.model.Movie
@@ -40,10 +40,10 @@ class MovieLocalRepositoryImpl @Inject constructor(
 
     override fun cachedMovies(): List<Movie>? = allMovies
 
-    override val favMovies: Flow<List<Int>> = dataStore.data.mapNotNull { prefs: Preferences ->
+    override val favMovies: Flow<List<Int>> = dataStore.data.map { prefs: Preferences ->
         prefs[FAVOURITE_MOVIE]?.let { json ->
             Json.decodeFromString(json)
-        }
+        } ?: emptyList()
     }
 
     override suspend fun setFavMovie(movie: Movie) {
