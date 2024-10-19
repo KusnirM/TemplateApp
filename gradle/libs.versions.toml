@@ -1,10 +1,10 @@
 [versions]
-androidGradle = "8.6.1"
 androidxActivity = "1.9.2"
 androidxComposeBOM = "2024.09.03"
 androidxDataStore = "1.1.1"
 androidxLifecycle = "2.8.6"
 androidxNavigation = "2.8.2"
+agp = "8.7.0"
 compileSdk = { strictly = "35" }
 dagger = "2.52"
 daggerHilt = "2.51.1"
@@ -48,6 +48,7 @@ junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", v
 junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junitJupiter" }
 kotlin-gradle = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-ksp-api = { group = "com.google.devtools.ksp", name = "symbol-processing-api", version.ref = "ksp" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
@@ -72,9 +73,12 @@ timber = { group = "com.jakewharton.timber", name = "timber", version = "5.0.1" 
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 
 [plugins]
-android-application = { id = "com.android.application", version.ref = "androidGradle" }
-android-dynamic-feature = { id = "com.android.dynamic-feature", version.ref = "androidGradle" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+android-dynamic-feature = { id = "com.android.dynamic-feature", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+

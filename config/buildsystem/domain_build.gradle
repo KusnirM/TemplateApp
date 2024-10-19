@@ -1,10 +1,29 @@
 /**
  * Common Configuration for Dynamic Feature Domain Module
  */
-apply from: "$rootProject.projectDir/config/buildsystem/domain_common_build.gradle"
+
+apply plugin: 'kotlin'
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+}
 
 dependencies {
-//    todo: 1. set on multiplatform
-//    todo: 2. move kmp to separate repo
     implementation(project(":common_domain"))
+
+    implementation(libs.kotlinx.coroutines.core)
+
+    testImplementation project(':common_test')
+//    testImplementation(libs.core.testing)
+    testImplementation(libs.junit.jupiter.api)
+//    testImplementation(libs.junit.jupiter.params)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+
+}
+
+test {
+    useJUnitPlatform()
 }

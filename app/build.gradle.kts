@@ -5,7 +5,7 @@ plugins {
 }
 
 apply {
-    from("${rootProject.projectDir}/config/buildsystem/presentation_common_build.gradle")
+    from("${rootDir}/config/buildsystem/presentation_common_build.gradle")
 }
 
 android {
